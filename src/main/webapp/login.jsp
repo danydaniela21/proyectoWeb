@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
+
+	<% if (session.getAttribute("usuario") != null) { %>
+        <% response.sendRedirect("Inicio"); %>
+        
+    <% } else { %>
 	<section class="main-login">
 		<div class="form-container-login">
 			<h3>Ingrese a su cuenta</h3>
@@ -31,6 +36,7 @@
 			<img alt="logo" src="img/logo-apr.png" class="logo">
 		</div>
 	</section>
+	<% } %>
 	
 	<!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

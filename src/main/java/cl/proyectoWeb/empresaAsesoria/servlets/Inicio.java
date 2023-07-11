@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Inicio
@@ -26,7 +27,12 @@ public class Inicio extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("inicio.jsp");
+		HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuario") == null) {
+	        response.sendRedirect("Login");
+	    } else {
+	    	response.sendRedirect("inicio.jsp");
+        }
 	}
 
 	/**

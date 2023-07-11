@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Login
@@ -33,8 +34,21 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String usuario = request.getParameter("usuario");
+        String password = request.getParameter("password");
+        
+        if (isValidUser(usuario, password)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("usuario", usuario);
+            request.getRequestDispatcher("Inicio").forward(request, response);
+        } else {
+        	request.setAttribute("errorMessage", "Credenciales inválidas");
+        	request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
 	}
+	
+	private boolean isValidUser(String usuario, String password) {
+        return usuario.equals("admin") && password.equals("1234");
+    }
 
 }
