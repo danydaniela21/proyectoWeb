@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CrearCapacitacion
+ * Servlet implementation class ListarCapacitaciones
  */
-@WebServlet("/CrearCapacitacion")
-public class CrearCapacitacion extends HttpServlet {
+@WebServlet("/ListarCapacitaciones")
+public class ListarCapacitaciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearCapacitacion() {
+    public ListarCapacitaciones() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,23 +26,25 @@ public class CrearCapacitacion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("crearCapacitacion.jsp");
+		response.sendRedirect("listarCapacitaciones.jsp");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nombre = request.getParameter("nombre");
-		String descripcion = request.getParameter("descripcion");
-		String fecha = request.getParameter("fecha");
-		String hora = request.getParameter("hora");
-		
+		String nombre = (String) request.getAttribute("nombre");
+		String descripcion = (String) request.getAttribute("descripcion");
+		String fecha = (String) request.getAttribute("fecha");
+		String hora = (String) request.getAttribute("hora");
+
 		request.setAttribute("nombre", nombre);
 		request.setAttribute("descripcion", descripcion);
 		request.setAttribute("fecha", fecha);
 		request.setAttribute("hora", hora);
-		request.getRequestDispatcher("ListarCapacitaciones").forward(request, response);
+
+		// Redirigir la solicitud a ListarCapacitacion.jsp
+		request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
 	}
 
 }

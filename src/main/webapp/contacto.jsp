@@ -36,7 +36,7 @@
 		</nav>
 	</header>
 	<main class="container">
-		<h1>Formulario de Contacto</h1>
+		<h3>Formulario de Contacto</h3>
         <form action='Contacto' method='post' id="contactForm" onsubmit="mostrarModal()">
         	<div class="form-group">
                 <label for="nombre">Nombre:</label>

@@ -4,16 +4,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Crear Capacitación</title>
+	<title>Capacitaciones</title>
 	<link rel="stylesheet" href="css/style.css">
-    <!-- CSS de Bootstrap -->
+	<!-- CSS de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
 	<header class="container-fluid">
 		<nav class="navbar navbar-expand-lg bg-light">
 		  <div class="container">
-		    <a class="navbar-brand" href="#">
+		    <a class="navbar-brand" href="/ProyectoWeb/Inicio">
 		    	<img alt="APR" src="img/logo-apr.png" class="img-logo">
 		    </a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,28 +35,43 @@
 		  </div>
 		</nav>
 	</header>
-	<main class="container">
-        <h3>Crear Capacitación</h3>
-        <form action="CrearCapacitacion" method="post">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="hora">Hora:</label>
-                <input type="time" id="hora" name="hora" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Crear</button>
-        </form>
-	</main>
+	<section>
+		<div class="container">
+	        <h3>Listado de Capacitaciones</h3>
+	
+	        <table class="table table-striped table-hover">
+	            <thead>
+	                <tr>
+	                    <th>Nombre</th>
+	                    <th>Descripción</th>
+	                    <th>Fecha</th>
+	                    <th>Hora</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr>
+                        <td>${nombre}</td>
+                        <td>${descripcion}</td>
+                        <td>${fecha}</td>
+                        <td>${hora}</td>
+                    </tr>
+                    <tr>
+                        <td>test</td>
+                        <td>descripcion de prueba</td>
+                        <td>2023-07-10</td>
+                        <td>12:30</td>
+                    </tr>
+                    <tr>
+                        <td>test 2</td>
+                        <td>descripcion de prueba 2</td>
+                        <td>2023-07-10</td>
+                        <td>12:30</td>
+                    </tr>
+	            </tbody>
+	        </table>
+	    </div>
+	    
+	</section>
 	
 	<!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
