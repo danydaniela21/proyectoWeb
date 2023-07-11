@@ -11,29 +11,7 @@
 </head>
 <body>
 	<header class="container-fluid">
-		<nav class="navbar navbar-expand-lg bg-light">
-		  <div class="container">
-		    <a class="navbar-brand" href="/ProyectoWeb/Inicio">
-		    	<img alt="APR" src="img/logo-apr.png" class="img-logo">
-		    </a>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="collapse navbar-collapse" id="navbarNav">
-		      <ul class="navbar-nav">
-		        <li class="nav-item">
-		          <a class="nav-link" aria-current="page" href="/ProyectoWeb/Inicio">Inicio</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="/ProyectoWeb/Contacto">Contacto</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="/ProyectoWeb/CrearCapacitacion">CrearCapacitaciones</a>
-		        </li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
+		<%@ include file="menu.jsp" %>
 	</header>
 	<main class="main-inicio container-fluid">
 		<div class="slide-principal">
@@ -51,4 +29,5 @@
 
 	<!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
 </html>

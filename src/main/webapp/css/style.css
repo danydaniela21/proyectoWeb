@@ -5,6 +5,17 @@ body {
 	height: 100%;
 }
 
+/* nav active */
+.link-active {
+	font-weight: 700!important;
+}
+
+/* menu */
+.btn-cerrar-sesion p {
+	margin: 0 16px 0 0;
+	
+}
+
 /* logo */
 .img-logo {
 	width: 200px;
@@ -80,7 +91,7 @@ footer {
 	width: 100%;
 	left: 0;
 	bottom: 0;
-	background: orange;
+	background: #000;
     padding: 24px 0 10px;
     text-align: center;
     color: #fff;
