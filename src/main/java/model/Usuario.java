@@ -4,12 +4,14 @@ public class Usuario {
 	private String nombre;
 	private String fechaNacimiento;
 	private String rutUsuario;
+	private String tipo;
 	
-	public Usuario(String nombre, String fechaNacimiento, String rutUsuario) {
+	public Usuario(String nombre, String fechaNacimiento, String rutUsuario, String tipo) {
 		super();
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
 		this.rutUsuario = rutUsuario;
+		this.tipo = tipo;
 	}
 
 	public String getNombre() {
@@ -36,5 +38,11 @@ public class Usuario {
 		this.rutUsuario = rutUsuario;
 	}
 	
-	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 }

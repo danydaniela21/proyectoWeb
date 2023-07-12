@@ -1,7 +1,7 @@
 package model;
 
 public class Capacitacion {
-	private int identificador; //obligatorio, número interno de la capacitación manejado por la empresa
+	private int identificador;
 	private String rutCliente;
 	private String dia;
 	private String hora1;

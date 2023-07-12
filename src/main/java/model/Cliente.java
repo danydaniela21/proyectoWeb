@@ -1,9 +1,6 @@
 package model;
 
 public class Cliente {
-	private String rut;
-	private String nombres;
-	private String apellidos;
 	private String telefono;
 	private String afp;
 	private int sistemaDeSalud;
@@ -11,42 +8,15 @@ public class Cliente {
 	private String comuna;
 	private int edad;
 	
-	public Cliente(String rut, String nombres, String apellidos, String telefono, String afp, int sistemaDeSalud,
+	public Cliente(String telefono, String afp, int sistemaDeSalud,
 			String direccion, String comuna, int edad) {
 		super();
-		this.rut = rut;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
 		this.telefono = telefono;
 		this.afp = afp;
 		this.sistemaDeSalud = sistemaDeSalud;
 		this.direccion = direccion;
 		this.comuna = comuna;
 		this.edad = edad;
-	}
-
-	public String getRut() {
-		return rut;
-	}
-
-	public void setRut(String rut) {
-		this.rut = rut;
-	}
-
-	public String getNombres() {
-		return nombres;
-	}
-
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
 	}
 
 	public String getTelefono() {
