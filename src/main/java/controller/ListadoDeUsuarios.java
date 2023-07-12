@@ -1,4 +1,4 @@
-package cl.proyectoWeb.empresaAsesoria.servlets;
+package controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class CerrarSesion
+ * Servlet implementation class ListadoDeUsuarios
  */
-@WebServlet("/CerrarSesion")
-public class CerrarSesion extends HttpServlet {
+@WebServlet("/ListadoDeUsuarios")
+public class ListadoDeUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CerrarSesion() {
+    public ListadoDeUsuarios() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,9 +27,12 @@ public class CerrarSesion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-        session.invalidate();
-        response.sendRedirect("login.jsp");
+		HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuario") == null) {
+	        response.sendRedirect("Login");
+	    } else {
+	    	response.sendRedirect("listadoDeUsuarios.jsp");
+        }
 	}
 
 	/**

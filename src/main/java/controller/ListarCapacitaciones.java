@@ -1,4 +1,4 @@
-package cl.proyectoWeb.empresaAsesoria.servlets;
+package controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

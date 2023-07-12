@@ -4,6 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Login</title>
 	<link rel="stylesheet" href="css/style.css">
     <!-- CSS de Bootstrap -->
@@ -17,6 +18,7 @@
     <% } else { %>
 	<section class="main-login">
 		<div class="form-container-login">
+			<img class="logo-login-blanco" alt="logo" src="img/logo-apr-blanco.png">
 			<h3>Ingrese a su cuenta</h3>
 			<form action="Login" method="post" class="row g-3">
 			  <div class="col-12">

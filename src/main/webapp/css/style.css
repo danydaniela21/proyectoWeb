@@ -12,7 +12,9 @@ body {
 
 /* menu */
 .btn-cerrar-sesion p {
-	margin: 0 16px 0 0;
+	margin: 0 0 0 24px;
+    font-weight: 300;
+    padding: 6px 18px;
 	
 }
 
@@ -22,6 +24,9 @@ body {
 }
 
 /* login */
+.logo-login-blanco {
+	display: none;
+}
 .main-login {
 	display: flex;
     flex-direction: row;
@@ -48,6 +53,9 @@ body {
 }
 .form-container-img .logo {
 	width: 400px;
+}
+.separador-mobile {
+	display: none;
 }
 
 /* main */
@@ -85,6 +93,22 @@ body {
     font-weight: 700;
 }
 
+/* formularios */
+.titulo-form {
+	margin: 24px 0;
+}
+.form-control-personalizado {
+	margin-bottom: 24px;
+}
+.input-personalizado {
+	background: #f6f7f8!important;
+	border: none!important;
+	border-radius: 3px!important;
+}
+.btn-submit-personalizado {
+	width: 200px;
+}
+
 /* footer */
 footer {
 	position: absolute;
@@ -96,4 +120,42 @@ footer {
     text-align: center;
     color: #fff;
     font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+	.main-login {
+		height: 100vh;
+		margin: 0;
+	}
+	.logo-login-blanco {
+		display: block;
+		width: 250px;
+    	margin: auto;
+	}
+	.form-container-login {
+		height: 100%;
+	}
+	.form-container-img {
+		display: none;
+	}
+  	.slide-principal {
+		height: 250px;
+    	padding: 0 16px;
+	}
+	.slide-principal h1 {
+		font-size: 40px;
+	}
+	.btn-submit-personalizado {
+		width: 100%;
+	}
+	.separador-mobile {
+		display: block;
+	}
+	.btn-cerrar-sesion {
+		flex-direction: column;
+    	align-items: start!important;
+	}
+	.btn-cerrar-sesion p {
+		margin: 0;
+	}
 }

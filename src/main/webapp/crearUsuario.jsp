@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Contacto</title>
+	<title>Crear Usuario</title>
 	<link rel="stylesheet" href="css/style.css">
     <!-- CSS de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
@@ -15,18 +15,18 @@
 		<%@ include file="menu.jsp" %>
 	</header>
 	<main class="container">
-		<h4 class="titulo-form">Formulario de Contacto</h4>
-        <form action='Contacto' method='post' id="contactForm" onsubmit="mostrarModal()">
-        	<div class="form-group form-control-personalizado">
-                <input type="text" class="form-control input-personalizado" id="nombre" name="nombre" placeholder="Nombre*" required>
+        <h4 class="titulo-form">Crear Usuario</h4>
+        <form action="CrearCapacitacion" method="post">
+            <div class="form-group form-control-personalizado">
+                <input type="text" id="nombre" name="nombre" class="form-control input-personalizado" placeholder="Nombre:">
             </div>
             <div class="form-group form-control-personalizado">
-                <input type="email" class="form-control input-personalizado" id="email" name="email" placeholder="Correo*" required>
+                <input type="date" id="fecha" name="fecha" class="form-control input-personalizado" placeholder="Fecha:">
             </div>
             <div class="form-group form-control-personalizado">
-                <textarea class="form-control input-personalizado" id="consulta" name="consulta" rows="5" placeholder="Mensaje*" required></textarea>
+                <input type="text" id="rutUsuario" name="rutUsuario" class="form-control input-personalizado" placeholder="RUT:">
             </div>
-            <button type="submit" class="btn btn-dark btn-submit-personalizado">Enviar</button>
+            <button type="submit" class="btn btn-dark btn-submit-personalizado">Crear</button>
         </form>
 	</main>
 	<footer class="container-fluid">

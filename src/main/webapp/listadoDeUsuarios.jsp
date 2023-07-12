@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Capacitaciones</title>
+	<title>Usuarios</title>
 	<link rel="stylesheet" href="css/style.css">
 	<!-- CSS de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
@@ -16,35 +16,26 @@
 	</header>
 	<section>
 		<div class="container">
-	        <h3>Listado de Capacitaciones</h3>
+	        <h3>Listado de Usuarios</h3>
 	
 	        <table class="table table-striped table-hover">
 	            <thead>
 	                <tr>
 	                    <th>Nombre</th>
-	                    <th>Descripción</th>
-	                    <th>Fecha</th>
-	                    <th>Hora</th>
+	                    <th>Fecha de Nacimiento</th>
+	                    <th>RUT</th>
 	                </tr>
 	            </thead>
 	            <tbody>
-	                <tr>
-                        <td>${nombre}</td>
-                        <td>${descripcion}</td>
-                        <td>${fecha}</td>
-                        <td>${hora}</td>
-                    </tr>
                     <tr>
-                        <td>test</td>
-                        <td>descripcion de prueba</td>
-                        <td>2023-07-10</td>
-                        <td>12:30</td>
+                        <td>test 1</td>
+                        <td>1988-09-11</td>
+                        <td>11111111-1</td>
                     </tr>
                     <tr>
                         <td>test 2</td>
-                        <td>descripcion de prueba 2</td>
-                        <td>2023-07-10</td>
-                        <td>12:30</td>
+                        <td>1992-12-14</td>
+                        <td>22222222-2</td>
                     </tr>
 	            </tbody>
 	        </table>

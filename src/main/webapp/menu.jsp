@@ -6,22 +6,23 @@
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
-	    <div class="collapse navbar-collapse" id="navbarNav">
-	      <ul class="navbar-nav">
-	        <li class="nav-item">
-	          <a class="nav-link" aria-current="page" href="/ProyectoWeb/inicio.jsp">Inicio</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="/ProyectoWeb/contacto.jsp">Contacto</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="/ProyectoWeb/crearCapacitacion.jsp">Crear Capacitaciones</a>
-	        </li>
-	      </ul>
-	    </div>
-	    <div class="d-flex justify-content-end align-items-center btn-cerrar-sesion">
-	    	<p>Hola ${usuario}</p>
-	    	<a href="#" id="btnCerrarSesion" class="btn btn-dark">Cerrar sesión</a>
+	    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+	      	<ul class="navbar-nav">
+	        	<li class="nav-item">
+	          		<a class="nav-link" aria-current="page" href="/ProyectoWeb/inicio.jsp">Inicio</a>
+	        	</li>
+	        	<li class="nav-item">
+	          		<a class="nav-link" href="/ProyectoWeb/contacto.jsp">Contacto</a>
+	        	</li>
+	        	<li class="nav-item">
+	          		<a class="nav-link" href="/ProyectoWeb/crearCapacitacion.jsp">Crear Capacitaciones</a>
+	        	</li>
+	     	</ul>
+	     	<hr class="separador-mobile">
+	      	<div class="d-flex align-items-center btn-cerrar-sesion">
+	    		<p>Hola ${usuario}</p>
+	    		<a href="#" id="btnCerrarSesion" class="btn btn-dark">Cerrar sesión</a>
+   			</div>
 	    </div>
 	</div>
 </nav>
