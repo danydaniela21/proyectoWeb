@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import conexion.CapacitacionDAO;
+import implementacion.CapacitacionDAOImpl;
 import model.Capacitacion;
 
 /**
@@ -49,9 +50,14 @@ public class CrearCapacitacion extends HttpServlet {
 		String duracion = request.getParameter("duracion");
 		
 		Capacitacion capacitacion = new Capacitacion();
+		capacitacion.setId(1);
 		capacitacion.setNombre(nombre);
 		capacitacion.setDetalle(capacitacion.mostrarDetalle(lugar, hora, Capacitacion.formatearFecha(fecha), duracion));
 
+		CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
+		capacitacionDAO.registrarCapacitacion(capacitacion);
+		/**
+		 * BBDD
 		CapacitacionDAO conexion = CapacitacionDAO.getInstance();
 		
 		try {
@@ -60,7 +66,8 @@ public class CrearCapacitacion extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        response.sendRedirect("ListarCapacitaciones");
+		**/
+        request.getRequestDispatcher("mensajeExito.jsp").forward(request, response);
 	}
 	
 }

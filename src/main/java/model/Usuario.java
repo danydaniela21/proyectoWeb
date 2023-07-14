@@ -13,6 +13,16 @@ public class Usuario {
 		this.rutUsuario = rutUsuario;
 		this.tipo = tipo;
 	}
+	
+	public Usuario() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rutUsuario=" + rutUsuario
+				+ ", tipo=" + tipo + "]";
+	}
 
 	public String getNombre() {
 		return nombre;

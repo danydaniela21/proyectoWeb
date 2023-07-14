@@ -10,6 +10,15 @@ public class Profesional {
 		this.fechaIngreso = fechaIngreso;
 	}
 
+	public Profesional() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}

@@ -24,9 +24,14 @@ public class Capacitacion {
 		this.detalle = detalle;
 	}
 	
-	
-	
 	public Capacitacion() {
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "Capacitacion [id=" + id + ", nombre=" + nombre + ", fecha=" + fecha + ", hora1=" + hora1 + ", lugar="
+				+ lugar + ", duracion=" + duracion + ", detalle=" + detalle + "]";
 	}
 
 	public int getId() {

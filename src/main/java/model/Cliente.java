@@ -18,6 +18,16 @@ public class Cliente {
 		this.comuna = comuna;
 		this.edad = edad;
 	}
+	
+	public Cliente() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaDeSalud=" + sistemaDeSalud + ", direccion="
+				+ direccion + ", comuna=" + comuna + ", edad=" + edad + "]";
+	}
 
 	public String getTelefono() {
 		return telefono;

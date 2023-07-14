@@ -127,6 +127,26 @@ footer {
     font-weight: 700;
 }
 
+/* mensaje éxito */
+.main-mensaje-exito {
+	background: #0000001f;
+	height: 100vh;
+	padding-top: 5%;
+}
+.mensaje-exito {
+	margin: auto;
+    width: 500px;
+    height: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px 24px;
+    border-radius: 44px;
+}
+
 @media only screen and (max-width: 767px) {
 	.main-login {
 		height: 100vh;

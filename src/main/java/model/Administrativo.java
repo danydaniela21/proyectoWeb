@@ -9,6 +9,15 @@ public class Administrativo {
 		this.area = area;
 		this.experienciaPrevia = experienciaPrevia;
 	}
+	
+	public Administrativo() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + "]";
+	}
 
 	public String getArea() {
 		return area;
