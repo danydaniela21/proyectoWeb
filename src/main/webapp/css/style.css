@@ -109,6 +109,11 @@ body {
 	width: 200px;
 }
 
+/* crear capacitacion */
+.btn-agregar-capacitacion {
+	float: right;
+}
+
 /* footer */
 footer {
 	position: absolute;

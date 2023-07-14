@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import conexion.CapacitacionDAO;
+import model.Capacitacion;
+
 /**
  * Servlet implementation class CrearCapacitacion
  */
@@ -40,15 +43,24 @@ public class CrearCapacitacion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombre = request.getParameter("nombre");
-		String descripcion = request.getParameter("descripcion");
+		String lugar = request.getParameter("lugar");
 		String fecha = request.getParameter("fecha");
 		String hora = request.getParameter("hora");
+		String duracion = request.getParameter("duracion");
 		
-		request.setAttribute("nombre", nombre);
-		request.setAttribute("descripcion", descripcion);
-		request.setAttribute("fecha", fecha);
-		request.setAttribute("hora", hora);
-		request.getRequestDispatcher("ListarCapacitaciones").forward(request, response);
-	}
+		Capacitacion capacitacion = new Capacitacion();
+		capacitacion.setNombre(nombre);
+		capacitacion.setDetalle(capacitacion.mostrarDetalle(lugar, hora, Capacitacion.formatearFecha(fecha), duracion));
 
+		CapacitacionDAO conexion = CapacitacionDAO.getInstance();
+		
+		try {
+			conexion.agregarCapacitacion(capacitacion);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        response.sendRedirect("ListarCapacitaciones");
+	}
+	
 }

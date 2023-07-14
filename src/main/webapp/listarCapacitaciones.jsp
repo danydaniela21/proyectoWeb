@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.Capacitacion" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,49 +13,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<header class="container-fluid">
-		<%@ include file="menu.jsp" %>
-	</header>
+	<%@ include file="menu.jsp" %>
 	<section>
 		<div class="container">
-	        <h3>Listado de Capacitaciones</h3>
-	
+	        <h4 class="titulo-form">Listado de Capacitaciones</h4>
+			<a class="btn btn-dark btn-agregar-capacitacion" href="/ProyectoWeb/CrearCapacitacion">Agregar Capacitación</a>
 	        <table class="table table-striped table-hover">
 	            <thead>
 	                <tr>
+	                	<th>ID</th>
 	                    <th>Nombre</th>
-	                    <th>Descripción</th>
-	                    <th>Fecha</th>
-	                    <th>Hora</th>
+	                    <th>Detalle</th>
 	                </tr>
 	            </thead>
 	            <tbody>
-	                <tr>
-                        <td>${nombre}</td>
-                        <td>${descripcion}</td>
-                        <td>${fecha}</td>
-                        <td>${hora}</td>
-                    </tr>
-                    <tr>
-                        <td>test</td>
-                        <td>descripcion de prueba</td>
-                        <td>2023-07-10</td>
-                        <td>12:30</td>
-                    </tr>
-                    <tr>
-                        <td>test 2</td>
-                        <td>descripcion de prueba 2</td>
-                        <td>2023-07-10</td>
-                        <td>12:30</td>
-                    </tr>
+		            <% List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones"); %>
+	                <% for (Capacitacion capacitacion : capacitaciones) { %>
+		                <tr>
+		                	<td><%= capacitacion.getId() %></td>
+	                        <td><%= capacitacion.getNombre() %></td>
+	                        <td><%= capacitacion.getDetalle() %></td>
+	                    </tr>
+                    <% } %>
 	            </tbody>
 	        </table>
 	    </div>
-	    
 	</section>
-	<footer class="container-fluid">
-		<p>Creado por el grupo 5</p>
-	</footer>
+	<%@ include file="footer.jsp" %>
 	
 	<!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

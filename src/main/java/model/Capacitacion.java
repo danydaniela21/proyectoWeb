@@ -1,48 +1,56 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Capacitacion {
-	private int identificador;
-	private String rutCliente;
-	private String dia;
+	private int id;
+	private String nombre;
+	private String fecha;
 	private String hora1;
 	private String lugar;
 	private String duracion;
-	private int cantidadAsistentes;
+	private String detalle;
 
-	public Capacitacion(int identificador, String rutCliente, String dia, String hora1, String lugar, String duracion,
-			int cantidadAsistentes) {
+	public Capacitacion(int id, String nombre, String fecha, String hora1, String lugar, String duracion, String detalle) {
 		super();
-		this.identificador = identificador;
-		this.rutCliente = rutCliente;
-		this.dia = dia;
+		this.id = id;
+		this.nombre = nombre;
+		this.fecha = fecha;
 		this.hora1 = hora1;
 		this.lugar = lugar;
 		this.duracion = duracion;
-		this.cantidadAsistentes = cantidadAsistentes;
+		this.detalle = detalle;
+	}
+	
+	
+	
+	public Capacitacion() {
 	}
 
-	public int getIdentificador() {
-		return identificador;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdentificador(int identificador) {
-		this.identificador = identificador;
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getNombre() {
+		return nombre;
 	}
 
-	public String getRutCliente() {
-		return rutCliente;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public void setRutCliente(String rutCliente) {
-		this.rutCliente = rutCliente;
+	public String getFecha() {
+		return fecha;
 	}
 
-	public String getDia() {
-		return dia;
-	}
-
-	public void setDia(String dia) {
-		this.dia = dia;
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 
 	public String getHora1() {
@@ -68,14 +76,29 @@ public class Capacitacion {
 	public void setDuracion(String duracion) {
 		this.duracion = duracion;
 	}
-
-	public int getCantidadAsistentes() {
-		return cantidadAsistentes;
+	
+	public String getDetalle() {
+		return detalle;
 	}
 
-	public void setCantidadAsistentes(int cantidadAsistentes) {
-		this.cantidadAsistentes = cantidadAsistentes;
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
 	}
 	
+	public static String formatearFecha(String fecha) {
+        try {
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaParseada = formatoEntrada.parse(fecha);
+
+            SimpleDateFormat formatoSalida = new SimpleDateFormat("EEEE dd 'de' MMMM 'del' yyyy");
+            return formatoSalida.format(fechaParseada);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 	
+	public String mostrarDetalle(String lugar, String hora, String fecha, String duracion) {
+		return "La capacitación será en " + lugar + " a las " + hora + " del día " + fecha + " y durará " + duracion + " minutos.";
+	}
 }

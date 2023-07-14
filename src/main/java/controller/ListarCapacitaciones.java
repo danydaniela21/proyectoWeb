@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import conexion.CapacitacionDAO;
+import model.Capacitacion;
+import java.util.List;
+
+
 /**
  * Servlet implementation class ListarCapacitaciones
  */
@@ -31,26 +36,19 @@ public class ListarCapacitaciones extends HttpServlet {
         if (session == null || session.getAttribute("usuario") == null) {
 	        response.sendRedirect("Login");
 	    } else {
-	    	response.sendRedirect("listarCapacitaciones.jsp");
+	    	CapacitacionDAO conexion = CapacitacionDAO.getInstance();
+	        List<Capacitacion> capacitaciones = conexion.obtenerCapacitaciones();
+	        request.setAttribute("capacitaciones", capacitaciones);
+	        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
         }
+        
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nombre = (String) request.getAttribute("nombre");
-		String descripcion = (String) request.getAttribute("descripcion");
-		String fecha = (String) request.getAttribute("fecha");
-		String hora = (String) request.getAttribute("hora");
-
-		request.setAttribute("nombre", nombre);
-		request.setAttribute("descripcion", descripcion);
-		request.setAttribute("fecha", fecha);
-		request.setAttribute("hora", hora);
-
-		// Redirigir la solicitud a ListarCapacitacion.jsp
-		request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
+		
 	}
 
 }

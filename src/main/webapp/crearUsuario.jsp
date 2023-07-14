@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<header class="container-fluid">
-		<%@ include file="menu.jsp" %>
-	</header>
+	<%@ include file="menu.jsp" %>
 	<main class="container">
         <h4 class="titulo-form">Crear Usuario</h4>
         <form action="CrearCapacitacion" method="post">
@@ -29,9 +27,7 @@
             <button type="submit" class="btn btn-dark btn-submit-personalizado">Crear</button>
         </form>
 	</main>
-	<footer class="container-fluid">
-		<p>Creado por el grupo 5</p>
-	</footer>
+	<%@ include file="footer.jsp" %>
 	
 	<!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
