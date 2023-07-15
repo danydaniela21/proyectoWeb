@@ -94,6 +94,10 @@ body {
 }
 
 /* formularios */
+.main-forms {
+	min-height: 600px;
+	height: 100%;
+}
 .titulo-form {
 	margin: 24px 0;
 }
@@ -114,17 +118,15 @@ body {
 	float: right;
 }
 
+
 /* footer */
 footer {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	bottom: 0;
 	background: #000;
     padding: 24px 0 10px;
     text-align: center;
     color: #fff;
     font-weight: 700;
+    margin-top: 40px;
 }
 
 /* mensaje éxito */

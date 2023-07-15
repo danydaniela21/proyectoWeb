@@ -1,11 +1,12 @@
 package model;
 
-public class Administrativo {
+public class Administrativo extends Usuario {
 	
 	private String area;
 	private String experienciaPrevia;
 	
-	public Administrativo(String area, String experienciaPrevia) {
+	public Administrativo(String nombre, String fechaNacimiento, String rutUsuario, String tipo, String area, String experienciaPrevia) {
+		super(nombre, fechaNacimiento, rutUsuario, tipo);
 		this.area = area;
 		this.experienciaPrevia = experienciaPrevia;
 	}
@@ -16,7 +17,8 @@ public class Administrativo {
 
 	@Override
 	public String toString() {
-		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + "]";
+		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + ", toString()="
+				+ super.toString() + "]";
 	}
 
 	public String getArea() {

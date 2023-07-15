@@ -12,7 +12,7 @@
 </head>
 <body>
 	<%@ include file="menu.jsp" %>
-	<main class="container">
+	<main class="container main-forms">
         <h4 class="titulo-form">Crear Capacitación</h4>
         <form action="CrearCapacitacion" method="post">
             <div class="form-group form-control-personalizado">

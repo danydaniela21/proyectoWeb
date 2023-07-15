@@ -37,19 +37,18 @@ public class ListarCapacitaciones extends HttpServlet {
         if (session == null || session.getAttribute("usuario") == null) {
 	        response.sendRedirect("Login");
 	    } else {
-	    	/**
-	    	 * BBDD
+	    	
 	    	CapacitacionDAO conexion = CapacitacionDAO.getInstance();
 	        List<Capacitacion> capacitaciones = conexion.obtenerCapacitaciones();
 	        request.setAttribute("capacitaciones", capacitaciones);
 	        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
-	        **/
+	        
 	    	
-	    	/** Interface **/
+	    	/** Interface 
 	    	CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
 	    	List<Capacitacion> capacitaciones = capacitacionDAO.obtenerListaCapacitaciones();
 	    	request.setAttribute("capacitaciones", capacitaciones);
-	        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
+	        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);**/
 	    	
         }
         

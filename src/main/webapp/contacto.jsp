@@ -12,7 +12,7 @@
 </head>
 <body>
 	<%@ include file="menu.jsp" %>
-	<main class="container">
+	<main class="container main-forms">
 		<h4 class="titulo-form">Formulario de Contacto</h4>
         <form action='Contacto' method='post' id="contactForm" onsubmit="mostrarModal()">
         	<div class="form-group form-control-personalizado">

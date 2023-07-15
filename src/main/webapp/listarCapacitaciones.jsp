@@ -14,30 +14,28 @@
 </head>
 <body>
 	<%@ include file="menu.jsp" %>
-	<section>
-		<div class="container">
-	        <h4 class="titulo-form">Listado de Capacitaciones</h4>
-			<a class="btn btn-dark btn-agregar-capacitacion" href="/ProyectoWeb/CrearCapacitacion">Agregar Capacitación</a>
-	        <table class="table table-striped table-hover">
-	            <thead>
+	<section class="container main-forms">
+		<h4 class="titulo-form">Listado de Capacitaciones</h4>
+		<a class="btn btn-dark btn-agregar-capacitacion" href="/ProyectoWeb/CrearCapacitacion">Agregar Capacitación</a>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                	<th>ID</th>
+                    <th>Nombre</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+	            <% List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones"); %>
+                <% for (Capacitacion capacitacion : capacitaciones) { %>
 	                <tr>
-	                	<th>ID</th>
-	                    <th>Nombre</th>
-	                    <th>Detalle</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-		            <% List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones"); %>
-	                <% for (Capacitacion capacitacion : capacitaciones) { %>
-		                <tr>
-		                	<td><%= capacitacion.getId() %></td>
-	                        <td><%= capacitacion.getNombre() %></td>
-	                        <td><%= capacitacion.getDetalle() %></td>
-	                    </tr>
-                    <% } %>
-	            </tbody>
-	        </table>
-	    </div>
+	                	<td><%= capacitacion.getId() %></td>
+                        <td><%= capacitacion.getNombre() %></td>
+                        <td><%= capacitacion.getDetalle() %></td>
+                    </tr>
+                   <% } %>
+            </tbody>
+        </table>
 	</section>
 	<%@ include file="footer.jsp" %>
 	

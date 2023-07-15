@@ -1,6 +1,6 @@
 package model;
 
-public class Cliente {
+public class Cliente extends Usuario {
 	private String telefono;
 	private String afp;
 	private int sistemaDeSalud;
@@ -8,9 +8,9 @@ public class Cliente {
 	private String comuna;
 	private int edad;
 	
-	public Cliente(String telefono, String afp, int sistemaDeSalud,
+	public Cliente(String nombre, String fechaNacimiento, String rutUsuario, String tipo, String telefono, String afp, int sistemaDeSalud,
 			String direccion, String comuna, int edad) {
-		super();
+		super(nombre, fechaNacimiento, rutUsuario, tipo);
 		this.telefono = telefono;
 		this.afp = afp;
 		this.sistemaDeSalud = sistemaDeSalud;
@@ -26,7 +26,7 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaDeSalud=" + sistemaDeSalud + ", direccion="
-				+ direccion + ", comuna=" + comuna + ", edad=" + edad + "]";
+				+ direccion + ", comuna=" + comuna + ", edad=" + edad + ", toString()=" + super.toString() + "]";
 	}
 
 	public String getTelefono() {

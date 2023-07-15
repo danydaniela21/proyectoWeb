@@ -12,7 +12,7 @@
 </head>
 <body>
 	<%@ include file="menu.jsp" %>
-	<main class="main-inicio container-fluid">
+	<main class="main-inicio container-fluid main-forms">
 		<div class="slide-principal">
 			<h1>Somos Soluciones en <strong>Prevención de Riesgos</strong></h1>
 		</div>

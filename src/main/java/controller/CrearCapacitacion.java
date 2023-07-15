@@ -54,10 +54,8 @@ public class CrearCapacitacion extends HttpServlet {
 		capacitacion.setNombre(nombre);
 		capacitacion.setDetalle(capacitacion.mostrarDetalle(lugar, hora, Capacitacion.formatearFecha(fecha), duracion));
 
-		CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
-		capacitacionDAO.registrarCapacitacion(capacitacion);
-		/**
-		 * BBDD
+		
+		
 		CapacitacionDAO conexion = CapacitacionDAO.getInstance();
 		
 		try {
@@ -66,6 +64,10 @@ public class CrearCapacitacion extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		/**
+		 * BBDD
+		CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
+		capacitacionDAO.registrarCapacitacion(capacitacion);
 		**/
         request.getRequestDispatcher("mensajeExito.jsp").forward(request, response);
 	}
