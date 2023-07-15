@@ -11,34 +11,81 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<%@ include file="menu.jsp" %>
-	<section class="container main-forms">
-		<h4 class="titulo-form">Listado de Usuarios</h4>
-	
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>RUT</th>
-                </tr>
-            </thead>
-            <tbody>
-                   <tr>
-                       <td>test 1</td>
-                       <td>1988-09-11</td>
-                       <td>11111111-1</td>
-                   </tr>
-                   <tr>
-                       <td>test 2</td>
-                       <td>1992-12-14</td>
-                       <td>22222222-2</td>
-                   </tr>
-            </tbody>
-        </table>
-	</section>
-	<%@ include file="footer.jsp" %>
-	
+	<% if (session.getAttribute("usuario") == null) { %>
+        <% response.sendRedirect("Login"); %>
+    <% } else { %>
+		<%@ include file="menu.jsp" %>
+		<section class="container main-forms">
+			<h4 class="titulo-form">Listado de Usuarios</h4>
+			<a class="btn btn-dark btn-agregar-capacitacion" href="/ProyectoWeb/CrearUsuario">Agregar Usuario</a>
+			<h6 class="my-4">Selecciona los tipos de usuarios a mostrar:</h6>
+	        <form id="checkboxForm">
+	            <div class="form-check">
+	                <input class="form-check-input" type="checkbox" value="administrativo" id="chkAdmin" checked>
+	                <label class="form-check-label" for="chkAdmin">Administrativo</label>
+	            </div>
+	            <div class="form-check">
+	                <input class="form-check-input" type="checkbox" value="cliente" id="chkCliente">
+	                <label class="form-check-label" for="chkCliente">Cliente</label>
+	            </div>
+	            <div class="form-check">
+	                <input class="form-check-input" type="checkbox" value="profesional" id="chkProfesional">
+	                <label class="form-check-label" for="chkProfesional">Profesional</label>
+	            </div>
+	        </form>
+	        
+	        <table class="table table-bordered my-4" id="tblAdministrativo">
+	            <thead>
+	                <tr>
+	                    <th>Nombre</th>
+	                    <th>Fecha</th>
+	                    <th>RUT</th>
+	                    <th>Área</th>
+	                    <th>Experiencia</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <!-- Datos de usuarios administrativos -->
+	            </tbody>
+	        </table>
+	        
+	        <table class="table table-bordered my-4" id="tblCliente">
+	            <thead>
+	                <tr>
+	                    <th>Nombre</th>
+	                    <th>Fecha</th>
+	                    <th>RUT</th>
+	                    <th>Teléfono</th>
+	                    <th>Afp</th>
+	                    <th>Sistema de salud</th>
+	                    <th>Dirección</th>
+	                    <th>Comuna</th>
+	                    <th>Edad</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <!-- Datos de usuarios clientes -->
+	            </tbody>
+	        </table>
+	        
+	        <table class="table table-bordered my-4" id="tblProfesional">
+	            <thead>
+	                <tr>
+	                    <th>Nombre</th>
+	                    <th>Email</th>
+	                    <th>RUT</th>
+	                    <th>Título</th>
+	                    <th>Fehca de ingreso</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <!-- Datos de usuarios profesionales -->
+	            </tbody>
+	        </table>
+	        
+		</section>
+		<%@ include file="footer.jsp" %>
+	<%} %>
 	<!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>

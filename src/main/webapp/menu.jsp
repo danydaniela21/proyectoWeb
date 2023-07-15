@@ -16,6 +16,9 @@
 		          		<a class="nav-link" href="/ProyectoWeb/ListarCapacitaciones">Capacitaciones</a>
 		        	</li>
 		        	<li class="nav-item">
+		          		<a class="nav-link" href="/ProyectoWeb/ListadoDeUsuarios">Usuarios</a>
+		        	</li>
+		        	<li class="nav-item">
 		          		<a class="nav-link" href="/ProyectoWeb/contacto.jsp">Contacto</a>
 		        	</li>
 		     	</ul>
