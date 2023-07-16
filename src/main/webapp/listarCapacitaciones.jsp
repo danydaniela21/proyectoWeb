@@ -28,8 +28,15 @@
 	                    <th>Detalle</th>
 	                </tr>
 	            </thead>
+	            <% List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones"); %>
+	            <% if (capacitaciones.isEmpty()) { %>
 	            <tbody>
-		            <% List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones"); %>
+		            <tr>
+		                <td colspan="10" class="text-center">No hay capacitaciones disponibles</td>
+		            </tr>
+		        </tbody>
+		        <% } else { %>
+	            <tbody>
 	                <% for (Capacitacion capacitacion : capacitaciones) { %>
 		                <tr>
 		                	<td><%= capacitacion.getId() %></td>
@@ -38,6 +45,7 @@
 	                    </tr>
 	                   <% } %>
 	            </tbody>
+	            <% } %>
 	        </table>
 		</section>
 		<%@ include file="footer.jsp" %>

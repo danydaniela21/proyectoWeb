@@ -1,17 +1,16 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import conexion.CapacitacionDAO;
 import implementacion.CapacitacionDAOImpl;
 import model.Capacitacion;
-import java.util.List;
 
 
 /**
@@ -33,25 +32,16 @@ public class ListarCapacitaciones extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("usuario") == null) {
-	        response.sendRedirect("Login");
-	    } else {
-	    	
-	    	CapacitacionDAO conexion = CapacitacionDAO.getInstance();
-	        List<Capacitacion> capacitaciones = conexion.obtenerCapacitaciones();
-	        request.setAttribute("capacitaciones", capacitaciones);
-	        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
-	        
-	    	
-	    	/** Interface 
-	    	CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
-	    	List<Capacitacion> capacitaciones = capacitacionDAO.obtenerListaCapacitaciones();
-	    	request.setAttribute("capacitaciones", capacitaciones);
-	        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);**/
-	    	
-        }
+		CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
+        List<Capacitacion> capacitaciones = capacitacionDAO.obtenerListaCapacitaciones();
+        request.setAttribute("capacitaciones", capacitaciones);
+        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
         
+    	/** Interface 
+    	CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
+    	List<Capacitacion> capacitaciones = capacitacionDAO.obtenerListaCapacitaciones();
+    	request.setAttribute("capacitaciones", capacitaciones);
+        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);**/
 	}
 
 	/**

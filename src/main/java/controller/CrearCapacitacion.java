@@ -6,9 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import conexion.CapacitacionDAO;
 import implementacion.CapacitacionDAOImpl;
 import model.Capacitacion;
 
@@ -31,12 +29,7 @@ public class CrearCapacitacion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("usuario") == null) {
-	        response.sendRedirect("Login");
-	    } else {
-	    	response.sendRedirect("crearCapacitacion.jsp");
-        }
+		response.sendRedirect("crearCapacitacion.jsp");
 	}
 
 	/**
@@ -50,25 +43,11 @@ public class CrearCapacitacion extends HttpServlet {
 		String duracion = request.getParameter("duracion");
 		
 		Capacitacion capacitacion = new Capacitacion();
-		capacitacion.setId(1);
 		capacitacion.setNombre(nombre);
 		capacitacion.setDetalle(capacitacion.mostrarDetalle(lugar, hora, Capacitacion.formatearFecha(fecha), duracion));
 
-		
-		
-		CapacitacionDAO conexion = CapacitacionDAO.getInstance();
-		
-		try {
-			conexion.agregarCapacitacion(capacitacion);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		/**
-		 * BBDD
 		CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
 		capacitacionDAO.registrarCapacitacion(capacitacion);
-		**/
         request.getRequestDispatcher("mensajeExito.jsp").forward(request, response);
 	}
 	

@@ -17,7 +17,7 @@
 		<%@ include file="menu.jsp" %>
 		<section class="container main-forms">
 			<h4 class="titulo-form">Listado de Usuarios</h4>
-			<a class="btn btn-dark btn-agregar-capacitacion" href="/ProyectoWeb/CrearUsuario">Agregar Usuario</a>
+			<a class="btn btn-dark btn-agregar-usuario" href="/ProyectoWeb/crearUsuario.jsp">Agregar Usuario</a>
 			<h6 class="my-4">Selecciona los tipos de usuarios a mostrar:</h6>
 	        <form id="checkboxForm">
 	            <div class="form-check">

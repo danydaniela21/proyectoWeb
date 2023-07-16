@@ -1,44 +1,63 @@
 package implementacion;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import interfaces.CapacitacionDAO;
 import interfaces.ICapacitacionDAO;
 import model.Capacitacion;
 
-public class CapacitacionDAOImpl implements ICapacitacionDAO {
-
+public class CapacitacionDAOImpl implements CapacitacionDAO {
+	private Connection conexion;
+	
+	public CapacitacionDAOImpl() {
+		conexion = ConexionBDImpl.obtenerInstancia().obtenerConexion();
+	}
+	
 	@Override
 	public List<Capacitacion> obtenerListaCapacitaciones() {
-		
+
         List<Capacitacion> capacitaciones = new ArrayList<>();
+        String consulta = "SELECT id, nombre, detalle FROM Capacitaciones";
+        
+        try (
+        	 PreparedStatement statement = conexion.prepareStatement(consulta);
+        		
+             ResultSet resultSet = statement.executeQuery()) {
 
-        Capacitacion capacitacion1 = new Capacitacion();
-        capacitacion1.setId(1);
-        capacitacion1.setNombre("Capacitacion 1");
-        capacitacion1.setDetalle("Descripción de la capacitación 1");
-        capacitaciones.add(capacitacion1);
-
-        Capacitacion capacitacion2 = new Capacitacion();
-        capacitacion2.setId(2);
-        capacitacion2.setNombre("Capacitacion 2");
-        capacitacion2.setDetalle("Descripción de la capacitación 2");
-        capacitaciones.add(capacitacion2);
-
-        Capacitacion capacitacion3 = new Capacitacion();
-        capacitacion3.setId(3);
-        capacitacion3.setNombre("Capacitacion 3");
-        capacitacion3.setDetalle("Descripción de la capacitación 3");
-        capacitaciones.add(capacitacion3);
-
+            while (resultSet.next()) {
+            	Capacitacion capacitacion = new Capacitacion();
+            	capacitacion.setId(resultSet.getInt("id"));
+            	capacitacion.setNombre(resultSet.getString("nombre"));
+            	capacitacion.setDetalle(resultSet.getString("detalle"));
+            	capacitaciones.add(capacitacion);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
         return capacitaciones;
 	}
 
 	@Override
 	public void registrarCapacitacion(Capacitacion capacitacion) {
-		System.out.println("ID: " + capacitacion.getId());
-        System.out.println("Nombre: " + capacitacion.getNombre());
-        System.out.println("Detalle: " + capacitacion.getDetalle());
+		String consulta = "INSERT INTO Capacitaciones (nombre, detalle) VALUES (?, ?)";
+
+        try (
+        		
+        	PreparedStatement statement = conexion.prepareStatement(consulta)) {
+            statement.setString(1, capacitacion.getNombre());
+            statement.setString(2, capacitacion.getDetalle());
+            
+            statement.executeUpdate();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 		
 	}
 

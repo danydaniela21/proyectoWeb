@@ -17,7 +17,7 @@
 		<%@ include file="menu.jsp" %>
 		<main class="container main-forms">
 	        <h4 class="titulo-form">Crear Usuario</h4>
-	        <form action="CrearCapacitacion" method="post">
+	        <form action="CrearUsuario" method="post">
 	        	<div class="form-group form-control-personalizado">
 			        <label>Selecciona tipo de usuario:</label>
 			        <div class="form-check">

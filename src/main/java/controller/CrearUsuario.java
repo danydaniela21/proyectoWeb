@@ -27,12 +27,9 @@ public class CrearUsuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("usuario") == null) {
-	        response.sendRedirect("Login");
-	    } else {
-	    	response.sendRedirect("crearUsuario.jsp");
-        }
+		String tipo = request.getParameter("tipo");
+		System.out.println("tipo: "+tipo);
+		request.getRequestDispatcher("ListadoDeUsuarios").forward(request, response);
 	}
 
 	/**
