@@ -41,7 +41,7 @@
 		            </div>
 		            <div class="form-floating form-control-personalizado">
 		                <input type="date" id="fechaAdmin" name="fecha" class="form-control input-personalizado">
-		                <label for="fechaAdmin">Fecha</label>
+		                <label for="fechaAdmin">Fecha de nacimiento</label>
 		            </div>
 		            <div class="form-floating form-control-personalizado">
 		                <input type="text" id="rutUsuarioAdmin" name="rutUsuario" class="form-control input-personalizado">
@@ -64,7 +64,7 @@
 		            </div>
 		            <div class="form-floating form-control-personalizado">
 		                <input type="date" id="fechaCliente" name="fecha" class="form-control input-personalizado">
-		                <label for="fechaCliente">Fecha</label>
+		                <label for="fechaCliente">Fecha de nacimiento</label>
 		            </div>
 		            <div class="form-floating form-control-personalizado">
 		                <input type="text" id="rutUsuarioCliente" name="rutUsuario" class="form-control input-personalizado">
@@ -110,7 +110,7 @@
 		            </div>
 		            <div class="form-floating form-control-personalizado">
 		                <input type="date" id="fechaPro" name="fecha" class="form-control input-personalizado">
-		                <label for="fechaPro">Fecha</label>
+		                <label for="fechaPro">Fecha de nacimiento</label>
 		            </div>
 		            <div class="form-floating form-control-personalizado">
 		                <input type="text" id="rutUsuarioPro" name="rutUsuario" class="form-control input-personalizado">

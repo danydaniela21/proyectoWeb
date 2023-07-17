@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import interfaces.CapacitacionDAO;
-import interfaces.ICapacitacionDAO;
 import model.Capacitacion;
 
 public class CapacitacionDAOImpl implements CapacitacionDAO {

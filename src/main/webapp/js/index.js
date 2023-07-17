@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
   	
   	// mostrar tablas segun el tipo de usuario
-  	if(window.location.pathname.includes("listadoDeUsuarios.jsp")) {
-		  const chkAdmin = document.getElementById("chkAdmin");
+  	if(window.location.pathname.includes("listadoDeUsuarios.jsp") || window.location.pathname.includes("ListadoDeUsuarios")) {
+		const chkAdmin = document.getElementById("chkAdmin");
 	    const chkCliente = document.getElementById("chkCliente");
 	    const chkProfesional = document.getElementById("chkProfesional");
 	    const tablaAdmin = document.getElementById("tblAdministrativo");
@@ -68,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	        mostrarTabla(tablaProfesional, mostrar && chkProfesional.checked);
 	    }
 	
-	    // Mostrar las tablas al cargar la página
+	    // Mostrar el formulario de "Administrativo" seleccionado al cargar la página
+	    chkAdmin.checked = true;
 	    mostrarTodasTablas();
 	
 	    // Escuchar el evento change en los checkboxes

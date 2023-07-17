@@ -37,11 +37,6 @@ public class ListarCapacitaciones extends HttpServlet {
         request.setAttribute("capacitaciones", capacitaciones);
         request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
         
-    	/** Interface 
-    	CapacitacionDAOImpl capacitacionDAO = new CapacitacionDAOImpl();
-    	List<Capacitacion> capacitaciones = capacitacionDAO.obtenerListaCapacitaciones();
-    	request.setAttribute("capacitaciones", capacitaciones);
-        request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);**/
 	}
 
 	/**

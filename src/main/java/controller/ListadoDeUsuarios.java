@@ -1,12 +1,16 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import implementacion.UsuarioDAOImpl;
+import model.Usuario;
 
 /**
  * Servlet implementation class ListadoDeUsuarios
@@ -27,7 +31,10 @@ public class ListadoDeUsuarios extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("listadoDeUsuarios.jsp");
+		UsuarioDAOImpl usuarioDAO = new UsuarioDAOImpl();
+		List<Usuario> usuarios = usuarioDAO.obtenerListaUsuario();
+		request.setAttribute("usuarios", usuarios);
+        request.getRequestDispatcher("listadoDeUsuarios.jsp").forward(request, response);
 	}
 
 	/**

@@ -118,6 +118,16 @@ body {
 	float: right;
 }
 
+/* crear usuario */
+.titulo-usuarios {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-agregar-usuario {
+	float: right;
+}
+
 
 /* footer */
 footer {

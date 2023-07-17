@@ -3,12 +3,12 @@ package model;
 public class Administrativo extends Usuario {
 	
 	private String area;
-	private String experienciaPrevia;
+	private String experiencia;
 	
-	public Administrativo(String nombre, String fechaNacimiento, String rutUsuario, String tipo, String area, String experienciaPrevia) {
-		super(nombre, fechaNacimiento, rutUsuario, tipo);
+	public Administrativo(int id, String nombre, String fechaNacimiento, String rutUsuario, String tipo, String area, String experiencia) {
+		super(id, nombre, fechaNacimiento, rutUsuario, tipo);
 		this.area = area;
-		this.experienciaPrevia = experienciaPrevia;
+		this.experiencia = experiencia;
 	}
 	
 	public Administrativo() {
@@ -17,7 +17,7 @@ public class Administrativo extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + ", toString()="
+		return "Administrativo [area=" + area + ", experiencia=" + experiencia + ", toString()="
 				+ super.toString() + "]";
 	}
 
@@ -29,12 +29,12 @@ public class Administrativo extends Usuario {
 		this.area = area;
 	}
 
-	public String getExperienciaPrevia() {
-		return experienciaPrevia;
+	public String getExperiencia() {
+		return experiencia;
 	}
 
-	public void setExperienciaPrevia(String experienciaPrevia) {
-		this.experienciaPrevia = experienciaPrevia;
+	public void setExperiencia(String experiencia) {
+		this.experiencia = experiencia;
 	}
 	
 	

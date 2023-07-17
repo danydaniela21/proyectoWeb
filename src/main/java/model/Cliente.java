@@ -3,17 +3,17 @@ package model;
 public class Cliente extends Usuario {
 	private String telefono;
 	private String afp;
-	private int sistemaDeSalud;
+	private int sistemaSalud;
 	private String direccion;
 	private String comuna;
 	private int edad;
 	
-	public Cliente(String nombre, String fechaNacimiento, String rutUsuario, String tipo, String telefono, String afp, int sistemaDeSalud,
+	public Cliente(int id, String nombre, String fechaNacimiento, String rutUsuario, String tipo, String telefono, String afp, int sistemaSalud,
 			String direccion, String comuna, int edad) {
-		super(nombre, fechaNacimiento, rutUsuario, tipo);
+		super(id, nombre, fechaNacimiento, rutUsuario, tipo);
 		this.telefono = telefono;
 		this.afp = afp;
-		this.sistemaDeSalud = sistemaDeSalud;
+		this.sistemaSalud = sistemaSalud;
 		this.direccion = direccion;
 		this.comuna = comuna;
 		this.edad = edad;
@@ -25,7 +25,7 @@ public class Cliente extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaDeSalud=" + sistemaDeSalud + ", direccion="
+		return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaSalud=" + sistemaSalud + ", direccion="
 				+ direccion + ", comuna=" + comuna + ", edad=" + edad + ", toString()=" + super.toString() + "]";
 	}
 
@@ -45,12 +45,12 @@ public class Cliente extends Usuario {
 		this.afp = afp;
 	}
 
-	public int getSistemaDeSalud() {
-		return sistemaDeSalud;
+	public int getSistemaSalud() {
+		return sistemaSalud;
 	}
 
-	public void setSistemaDeSalud(int sistemaDeSalud) {
-		this.sistemaDeSalud = sistemaDeSalud;
+	public void setSistemaSalud(int sistemaSalud) {
+		this.sistemaSalud = sistemaSalud;
 	}
 
 	public String getDireccion() {
