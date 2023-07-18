@@ -41,6 +41,10 @@ public class CrearCapacitacion extends HttpServlet {
 		String fecha = request.getParameter("fecha");
 		String hora = request.getParameter("hora");
 		String duracion = request.getParameter("duracion");
+		String formulario = request.getParameter("formulario");
+		request.setAttribute("formulario", formulario);
+		
+		System.out.println("formulario: "+formulario);
 		
 		Capacitacion capacitacion = new Capacitacion();
 		capacitacion.setNombre(nombre);

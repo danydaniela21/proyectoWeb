@@ -18,6 +18,7 @@
 		<main class="container main-forms">
 	        <h4 class="titulo-form">Crear Capacitación</h4>
 	        <form action="CrearCapacitacion" method="post">
+	        	<input type="hidden" name="formulario" value="capacitacion">
 	            <div class="form-floating form-control-personalizado">
 	                <input type="text" id="nombre" name="nombre" class="form-control input-personalizado">
 	                <label for="nombre">Nombre</label>

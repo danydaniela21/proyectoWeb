@@ -47,22 +47,26 @@
 	        	<caption>Administradores</caption>
 	            <thead>
 	                <tr>
+	                	<th>ID</th>
 	                    <th>Nombre</th>
 	                    <th>Fecha</th>
 	                    <th>RUT</th>
 	                    <th>Área</th>
 	                    <th>Experiencia</th>
+	                    <th></th>
 	                </tr>
 	            </thead>
 	            <tbody>
 	                <% for (Usuario usuario : usuarios) { %>
 	                	<% if ("Administrativo".equals(usuario.getTipo())) { %>
 	                	<tr>
+	                		<td><%= usuario.getId() %></td>
 	                        <td><%= usuario.getNombre() %></td>
 	                        <td><%= usuario.getFechaNacimiento() %></td>
 	                        <td><%= usuario.getRut() %></td>
 	                        <td><%= ((Administrativo) usuario).getArea() %></td>
 	                        <td><%= ((Administrativo) usuario).getExperiencia() %></td>
+	                        <td><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
 	                    </tr>
 	                	<%} else { %>
 	                	<tr>
@@ -77,6 +81,7 @@
 	        	<caption>Clientes</caption>
 	            <thead>
 	                <tr>
+	                	<th>ID</th>
 	                    <th>Nombre</th>
 	                    <th>Fecha</th>
 	                    <th>RUT</th>
@@ -92,6 +97,7 @@
 	                <% for (Usuario usuario : usuarios) { %>
 	                	<% if ("Cliente".equals(usuario.getTipo())) { %>
 	                	<tr>
+	                		<td><%= usuario.getId() %></td>
 	                        <td><%= usuario.getNombre() %></td>
 	                        <td><%= usuario.getFechaNacimiento() %></td>
 	                        <td><%= usuario.getRut() %></td>
@@ -101,6 +107,7 @@
 	                        <td><%= ((Cliente) usuario).getDireccion() %></td>
 	                        <td><%= ((Cliente) usuario).getComuna() %></td>
 	                        <td><%= ((Cliente) usuario).getEdad() %></td>
+	                        <td><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
 	                    </tr>
 	                	<%} else { %>
 	                	<tr>
@@ -115,6 +122,7 @@
 	        	<caption>Profesionales</caption>
 	            <thead>
 	                <tr>
+	                	<th>ID</th>
 	                    <th>Nombre</th>
 	                    <th>Email</th>
 	                    <th>RUT</th>
@@ -126,11 +134,13 @@
 	                <% for (Usuario usuario : usuarios) { %>
 	                	<% if ("Profesional".equals(usuario.getTipo())) { %>
 	                	<tr>
+	                		<td><%= usuario.getId() %></td>
 	                        <td><%= usuario.getNombre() %></td>
 	                        <td><%= usuario.getFechaNacimiento() %></td>
 	                        <td><%= usuario.getRut() %></td>
 	                        <td><%= ((Profesional) usuario).getTitulo() %></td>
 	                        <td><%= ((Profesional) usuario).getFechaIngreso() %></td>
+	                        <td><a class="btn btn-danger" href="EditarUsuario?id=<%= usuario.getId()%>&tipo=<%= usuario.getTipo() %>">Editar</a></td>
 	                    </tr>
 	                	<%} else { %>
 	                	<tr>

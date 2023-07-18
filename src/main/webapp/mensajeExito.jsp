@@ -14,16 +14,23 @@
 	<% if (session.getAttribute("usuario") == null) { %>
         <% response.sendRedirect("Login"); %>
     <% } else { %>
-		<main class="container-fluid main-mensaje-exito">
-			<div class="mensaje-exito">
-				<lottie-player src="https://lottie.host/53c6e4c1-3eb4-4c09-8513-5f6f6a277bbd/StTyivngvZ.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay></lottie-player>
-			
+	<main class="container-fluid main-mensaje-exito">
+		<div class="mensaje-exito">
+			<lottie-player src="https://lottie.host/53c6e4c1-3eb4-4c09-8513-5f6f6a277bbd/StTyivngvZ.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay></lottie-player>
+			<% if ("capacitacion".equals(request.getAttribute("formulario"))) { %>
 				<h3>Capacitación creada con éxito</strong></h3>
 				<a href="/ProyectoWeb/ListarCapacitaciones" class="btn btn-dark">Volver</a>
-			</div>
-			
-		</main>
-	<%} %>
+			<% } else if ("usuario".equals(request.getAttribute("formulario"))) { %>
+				<h3>Usuario creado con éxito</strong></h3>
+				<a href="/ProyectoWeb/ListadoDeUsuarios" class="btn btn-dark">Volver</a>
+			<% } else if ("actualizarUsuario".equals(request.getAttribute("formulario"))) { %>
+				<h3>Usuario actualizado con éxito</strong></h3>
+				<a href="/ProyectoWeb/ListadoDeUsuarios" class="btn btn-dark">Volver</a>
+			<% } %>
+		</div>
+		
+	</main>
+	<% } %>
 
 	<!-- JS de Bootstrap -->
 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
