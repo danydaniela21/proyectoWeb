@@ -2,10 +2,10 @@ Proyecto: Sprint Final desarrollo de aplicaciones web dinamicas con java
 
 Integrantes:
 
--Cynthia Isla 		https://github.com/belenafox/proyectoWeb.git
--Rodrigo Dominguez
--Daniela Duran
--Roswill Ascanio
+-Cynthia Isla 		  https://github.com/belenafox/proyectoWeb.git
+-Rodrigo Dominguez  https://github.com/RodrigoDosBarbas/proyectoWeb.git
+-Daniela Duran      https://github.com/danydaniela21/proyectoWeb.git
+-Roswill Ascanio    https://github.com/Roswilj/proyectoWeb.git
 
 Resumen del Proyecto:
 
